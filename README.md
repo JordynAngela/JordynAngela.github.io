@@ -24,4 +24,4 @@ computational neuroscience, Psychology, genomics, and neurogenetics.
 
 [GitHub](https://github.com/JordynAngela)
 [student email](Janene@Uoguelph.ca)
-[Laurier Lab Email] (janene@WLU.ca)
+[Laurier Lab Email](janene@WLU.ca)
