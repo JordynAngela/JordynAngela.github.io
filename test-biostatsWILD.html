@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biostats WILD | Jordyn Anene</title>
+
+    <meta name="description"
+        content="Biostats WILD — Jordyn Anene's 2025 BI393 undergraduate biostatistics portfolio exploring biological data, statistics, research, and scientific visualization.">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #4d4057;
+            background: linear-gradient(
+                180deg,
+                #fff7fc 0%,
+                #f8f2ff 45%,
+                #eef8f5 100%
+            );
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           ANIMATED BACKGROUND
+        ========================================= */
+
+        .wild-background {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+
+        /* Soft pastel bubbles */
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.25;
+        }
+
+        .bubble1 {
+            width: 180px;
+            height: 180px;
+            background: #f4c7df;
+            top: 12%;
+            left: 5%;
+        }
+
+        .bubble2 {
+            width: 230px;
+            height: 230px;
+            background: #d9c7f4;
+            top: 45%;
+            right: 5%;
+        }
+
+        .bubble3 {
+            width: 140px;
+            height: 140px;
+            background: #c5e8df;
+            bottom: 20%;
+            left: 15%;
+        }
+
+
+        /* =========================================
+           CLOUDS
+        ========================================= */
+
+        .cloud {
+            position: absolute;
+            font-size: 45px;
+            opacity: 0.35;
+        }
+
+        .cloud1 {
+            top: 12%;
+            left: 10%;
+            animation: floatCloud 30s linear infinite;
+        }
+
+        .cloud2 {
+            top: 22%;
+            right: 10%;
+            animation: floatCloudReverse 38s linear infinite;
+        }
+
+        @keyframes floatCloud {
+
+            0% {
+                transform: translateX(-30px);
+            }
+
+            50% {
+                transform: translateX(40px);
+            }
+
+            100% {
+                transform: translateX(-30px);
+            }
+
+        }
+
+        @keyframes floatCloudReverse {
+
+            0% {
+                transform: translateX(30px);
+            }
+
+            50% {
+                transform: translateX(-40px);
+            }
+
+            100% {
+                transform: translateX(30px);
+            }
+
+        }
+
+
+        /* =========================================
+           FOREST
+        ========================================= */
+
+        .forest {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            white-space: nowrap;
+            font-size: 45px;
+            opacity: 0.35;
+            letter-spacing: 8px;
+        }
+
+
+        /* =========================================
+           WALKING ANIMALS
+        ========================================= */
+
+        .animal {
+            position: absolute;
+            font-size: 34px;
+            white-space: nowrap;
+        }
+
+        .deer {
+            bottom: 65px;
+            animation: walkRight 32s linear infinite;
+        }
+
+        .rabbit {
+            bottom: 70px;
+            animation: walkLeft 25s linear infinite;
+            animation-delay: 5s;
+        }
+
+        .fox {
+            bottom: 75px;
+            animation: walkRight 38s linear infinite;
+            animation-delay: 10s;
+        }
+
+        .squirrel {
+            bottom: 60px;
+            animation: walkLeft 29s linear infinite;
+            animation-delay: 15s;
+        }
+
+        @keyframes walkRight {
+
+            from {
+                left: -100px;
+            }
+
+            to {
+                left: 110%;
+            }
+
+        }
+
+        @keyframes walkLeft {
+
+            from {
+                left: 110%;
+            }
+
+            to {
+                left: -100px;
+            }
+
+        }
+
+
+        /* =========================================
+           FLYING BIRDS
+        ========================================= */
+
+        .bird {
+            position: absolute;
+            font-size: 25px;
+            animation: flyAcross 20s linear infinite;
+        }
+
+        .bird1 {
+            top: 18%;
+            animation-delay: 0s;
+        }
+
+        .bird2 {
+            top: 30%;
+            animation-delay: 7s;
+        }
+
+        .bird3 {
+            top: 10%;
+            animation-delay: 13s;
+        }
+
+        @keyframes flyAcross {
+
+            from {
+                left: -80px;
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-20px);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+
+            75% {
+                transform: translateY(-15px);
+            }
+
+            to {
+                left: 110%;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================
+           BUTTERFLIES
+        ========================================= */
+
+        .butterfly {
+            position: absolute;
+            font-size: 25px;
+            animation: butterflyFloat 12s ease-in-out infinite;
+        }
+
+        .butterfly1 {
+            top: 35%;
+            left: 15%;
+        }
+
+        .butterfly2 {
+            top: 55%;
+            right: 18%;
+            animation-delay: 3s;
+        }
+
+        .butterfly3 {
+            top: 65%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        @keyframes butterflyFloat {
+
+            0% {
+                transform: translate(0, 0) rotate(-5deg);
+            }
+
+            25% {
+                transform: translate(30px, -25px) rotate(5deg);
+            }
+
+            50% {
+                transform: translate(10px, 20px) rotate(-5deg);
+            }
+
+            75% {
+                transform: translate(-25px, -15px) rotate(5deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(-5deg);
+            }
+
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .page {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px 80px;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav {
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 45px;
+            background: rgba(255, 255, 255, 0.72);
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(100, 80, 120, 0.08);
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 5px 8px;
+            padding: 7px 12px;
+            color: #725a82;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #f4d8ea;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            text-align: center;
+            padding: 45px 25px;
+            margin-bottom: 35px;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(100, 80, 120, 0.10);
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(42px, 8vw, 75px);
+            color: #795b83;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            margin: 5px 0 20px;
+            font-weight: normal;
+            color: #a06c91;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 15px auto;
+        }
+
+        .wild-tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            background: #eadcf7;
+            color: #71568b;
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           BI393 DESCRIPTION
+        ========================================= */
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 25px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 25px rgba(100, 80, 120, 0.08);
+        }
+
+        .intro h2 {
+            text-align: center;
+            color: #795b83;
+        }
+
+
+        /* =========================================
+           CANVA PORTFOLIO
+        ========================================= */
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 25px;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(100, 80, 120, 0.12);
+        }
+
+        .portfolio-card h2 {
+            text-align: center;
+            color: #795b83;
+            margin-top: 5px;
+        }
+
+        .portfolio-card > p {
+            text-align: center;
+            color: #806d86;
+        }
+
+        .canva-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 141.4286%;
+            padding-bottom: 0;
+            box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+            margin-top: 1.6em;
+            margin-bottom: 0.9em;
+            overflow: hidden;
+            border-radius: 8px;
+            will-change: transform;
+        }
+
+        .canva-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        /* =========================================
+           CANVA BUTTON
+        ========================================= */
+
+        .canva-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .canva-link a {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #f2d8e8;
+            color: #694f70;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .canva-link a:hover {
+            background: #e6c7dc;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           COURSE INFORMATION
+        ========================================= */
+
+        .course-info {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(237, 229, 250, 0.78);
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .course-info h2 {
+            color: #71568b;
+        }
+
+
+        /* =========================================
+           BACK BUTTON
+        ========================================= */
+
+        .back {
+            display: block;
+            width: fit-content;
+            margin: 45px auto 0;
+            padding: 12px 24px;
+            background: #d9eee7;
+            color: #536f68;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            transform: translateY(-2px);
+            background: #c9e4db;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding: 15px 12px 60px;
+            }
+
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                margin: 3px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 30px 18px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .intro,
+            .portfolio-card,
+            .course-info {
+                padding: 20px;
+            }
+
+            .animal {
+                font-size: 27px;
+            }
+
+            .forest {
+                font-size: 32px;
+            }
+
+        }
+
+
+        /* =========================================
+           ACCESSIBILITY
+        ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .animal,
+            .bird,
+            .butterfly,
+            .cloud {
+                animation: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         ANIMATED WILD BACKGROUND
+    ========================================= -->
+
+    <div class="wild-background">
+
+        <div class="bubble bubble1"></div>
+
+        <div class="bubble bubble2"></div>
+
+        <div class="bubble bubble3"></div>
+
+
+        <div class="cloud cloud1">
+            ☁️
+        </div>
+
+        <div class="cloud cloud2">
+            ☁️
+        </div>
+
+
+        <!-- Forest -->
+
+        <div class="forest">
+            🌲 🌳 🌲 🌳 🌲 🌲 🌳 🌲 🌳 🌲 🌲 🌳 🌲 🌳 🌲 🌲 🌳 🌲 🌳 🌲
+        </div>
+
+
+        <!-- Walking animals -->
+
+        <div class="animal deer">
+            🦌
+        </div>
+
+        <div class="animal rabbit">
+            🐇
+        </div>
+
+        <div class="animal fox">
+            🦊
+        </div>
+
+        <div class="animal squirrel">
+            🐿️
+        </div>
+
+
+        <!-- Flying birds -->
+
+        <div class="bird bird1">
+            🐦
+        </div>
+
+        <div class="bird bird2">
+            🐦
+        </div>
+
+        <div class="bird bird3">
+            🐦
+        </div>
+
+
+        <!-- Butterflies -->
+
+        <div class="butterfly butterfly1">
+            🦋
+        </div>
+
+        <div class="butterfly butterfly2">
+            🦋
+        </div>
+
+        <div class="butterfly butterfly3">
+            🦋
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MAIN PAGE
+    ========================================= -->
+
+    <div class="page">
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#projects">
+                Projects
+            </a>
+
+            <a href="index.html#skills">
+                Skills
+            </a>
+
+            <a href="index.html#research">
+                Research
+            </a>
+
+            <a href="biostatsWILD.html">
+                Biostats WILD
+            </a>
+
+            <a href="recommendations.html">
+                Recommendations
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- =========================================
+             HERO
+        ========================================= -->
+
+        <section class="hero">
+
+            <h1>
+                Biostats WILD
+            </h1>
+
+            <h2>
+                An Undergraduate Biostatistics Portfolio
+            </h2>
+
+            <p>
+                Exploring statistics, biological data,
+                research, and scientific visualization
+                through an interdisciplinary lens.
+            </p>
+
+            <span class="wild-tag">
+                🌸 R • Statistics • Biology • Data • Art 🌸
+            </span>
+
+        </section>
+
+
+        <!-- =========================================
+             BI393 DESCRIPTION
+        ========================================= -->
+
+        <section class="intro">
+
+            <h2>
+                About Biostats WILD
+            </h2>
+
+            <p>
+                <strong>Biostats WILD</strong> is my 2025 BI393
+                undergraduate biostatistics portfolio.
+            </p>
+
+            <p>
+                The portfolio explores biological datasets,
+                statistical methods, research questions,
+                data visualization, and the creative side
+                of working with scientific data.
+            </p>
+
+            <p>
+                Rather than treating statistics as simply a
+                collection of formulas, this portfolio documents
+                my process of learning how statistical thinking
+                can be used to investigate biological and
+                psychological questions.
+            </p>
+
+        </section>
+
+
+        <!-- =========================================
+             CANVA PORTFOLIO
+        ========================================= -->
+
+        <section class="portfolio-card">
+
+            <h2>
+                🌿 Explore the Portfolio 🌿
+            </h2>
+
+            <p>
+                View the complete Biostats WILD portfolio below.
+            </p>
+
+
+            <div class="canva-container">
+
+                <iframe
+                    loading="lazy"
+                    src="https://www.canva.com/design/DAG5Sy-YZGo/izXzqu1WxbGjLAV3F5D5dQ/view?embed"
+                    allowfullscreen="allowfullscreen"
+                    allow="fullscreen">
+                </iframe>
+
+            </div>
+
+
+            <div class="canva-link">
+
+                <a
+                    href="https://www.canva.com/design/DAG5Sy-YZGo/izXzqu1WxbGjLAV3F5D5dQ/view?utm_content=DAG5Sy-YZGo&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Open Biostats WILD in Canva ↗
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             COURSE INFORMATION
+        ========================================= -->
+
+        <section class="course-info">
+
+            <h2>
+                BI393 • Biostatistics
+            </h2>
+
+            <p>
+                This portfolio was created as part of
+                <strong>BI393</strong> in 2025 at
+                <strong>Wilfrid Laurier University</strong>.
+            </p>
+
+            <p>
+                Taught by
+                <strong>Tristan A. F. Long, Associate Professor</strong>.
+            </p>
+
+            <p>
+                The project reflects my development in
+                statistical analysis, R programming,
+                biological data analysis, and scientific
+                visualization.
+            </p>
+
+        </section>
+
+
+        <!-- =========================================
+             BACK TO PORTFOLIO
+        ========================================= -->
+
+        <a
+            href="index.html"
+            class="back">
+
+            ← Back to My Portfolio
+
+        </a>
+
+
+    </div>
+
+
+</body>
+
+</html>
