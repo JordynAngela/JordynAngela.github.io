@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recommend Me | Jordyn Anene</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .recommendation {
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 750px;
+        }
+
+        .recommendation h3 {
+            margin-bottom: 5px;
+        }
+
+        .relationship {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            font-style: italic;
+        }
+
+        .recommendation-form {
+            text-align: center;
+            margin: 60px auto 40px;
+            padding: 35px;
+            border-radius: 15px;
+            max-width: 700px;
+        }
+
+        .recommendation-form a {
+            display: inline-block;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="index.html#about">About</a>
+
+        <a href="index.html#projects">Projects</a>
+
+        <a href="index.html#skills">Skills</a>
+
+        <a href="index.html#research">Research</a>
+
+        <a href="recommendations.html">Recommendations</a>
+
+        <a href="index.html#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- PAGE INTRO -->
+
+    <h1>Recommend Me</h1>
+
+    <div class="intro">
+
+        <p>
+            I value the people I've had the opportunity to learn,
+            work, research, and collaborate with.
+        </p>
+
+        <p>
+            If we've worked together, studied together, collaborated
+            on a project, or you've had the opportunity to know me
+            professionally, I'd love to hear about your experience.
+        </p>
+
+        <p>
+            Recommendations are reviewed before being displayed
+            on this page.
+        </p>
+
+    </div>
+
+
+    <!-- RECENT RECOMMENDATIONS -->
+
+    <h2 style="text-align: center;">
+        Recent Recommendations
+    </h2>
+
+
+    <!-- COPY THIS BLOCK FOR EACH APPROVED RECOMMENDATION -->
+
+    <div class="recommendation">
+
+        <h3>Your Name Here</h3>
+
+        <div class="relationship">
+            Classmate • Wilfrid Laurier University
+        </div>
+
+        <p class="quote">
+            "Your recommendation will appear here."
+        </p>
+
+    </div>
+
+
+    <!-- ADD MORE RECOMMENDATIONS ABOVE THIS LINE -->
+
+
+    <!-- GOOGLE FORM -->
+
+    <div class="recommendation-form">
+
+        <h2>Want to Recommend Me?</h2>
+
+        <p>
+            If you've worked with me, studied with me,
+            collaborated with me, or know me professionally,
+            you can leave a recommendation below.
+        </p>
+
+        <p>
+            I review all submissions before choosing which
+            recommendations to display publicly.
+        </p>
+
+        <a
+            href="https://forms.gle/VNf2kQ4r1g5ut2rYA"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Leave a Recommendation
+
+        </a>
+
+    </div>
+
+
+    <!-- BACK TO HOME -->
+
+    <a href="index.html" class="back">
+        ← Back to Portfolio
+    </a>
+
+
+</body>
+
+</html>
